@@ -15,9 +15,9 @@ const Todoitem = (props) => {
     }
     return (
 
-        <div className="flex justify-between">
-            <p>{props.order + 1}.{props.activity}</p>
-            <button className=" text-red-500" onClick={() => { delect(props.id) }}>Del</button>
+        <div className="task-item">
+            <p><span className="task-number">{String(props.order + 1).padStart(2, "0")}</span>{props.activity}</p>
+            <button className="delete-task" onClick={() => { delect(props.id) }}>Remove</button>
         </div>
 
 

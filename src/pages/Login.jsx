@@ -36,22 +36,20 @@ const Log = (props) => {
 
     }
     return (
-        <div className="bg-black p-10">
-            <div className="bg-white p-5 rounded-md">
-                <h1 className="font-bold text-3xl">Hey Hi 🎉</h1>
-                {
-                    invalid ? <p>I help you manage your activities after you login:)</p> : <p className="text-red-600">Please SignUp frist!!</p>
-                }
-
-                <div className="flex flex-col w-52 gap-2 my-2">
-                    <input value={euser} onChange={handleEuser} type="text" placeholder="Username" className="border-2 bg-transparent focus:outline-hidden p-2 rounded-md"></input><br />
-                    <input value={epass} onChange={handleEpass} type="text" placeholder="Password" className="border-2 bg-transparent focus:outline-hidden p-2 rounded-md"></input><br />
-                    <button className="bg-fuchsia-500 p-2 rounded-md w-20" onClick={checkUser}>Login</button>
+        <main className="auth-shell">
+            <section className="auth-card">
+                <div className="brand-mark">A</div>
+                <p className="eyebrow">ACTODO / YOUR DAILY SPACE</p>
+                <h1>Make room for what matters.</h1>
+                {invalid ? <p className="auth-copy">A calm, focused place to keep your day moving.</p> : <p className="auth-error">We couldn&apos;t find that account. Try again or sign up.</p>}
+                <div className="auth-form">
+                    <label>Username<input value={euser} onChange={handleEuser} type="text" placeholder="Enter your username" /></label>
+                    <label>Password<input value={epass} onChange={handleEpass} type="password" placeholder="Enter your password" /></label>
+                    <button className="primary-button" onClick={checkUser}>Continue</button>
                 </div>
-
-                <p>Don't have an account? <Link to="/signUp" className="underline">SignUp</Link></p>
-            </div>
-        </div>
+                <p className="auth-footer">New here? <Link to="/signUp">Create an account</Link></p>
+            </section>
+        </main>
     )
 }
 export default Log

@@ -7,17 +7,17 @@ function Landing(){
     const data = useLocation()
     console.log(data.state.user)
 return(
-      <div className="bg-black p-10 ">
-      <div className="bg-white p-5 border rounded-md">
-        <Header username={data.state.user}></Header>
-        <div className="text-center flex justify-between my-5 gap-5 flex-wrap">
-          <Card bgColor={"red"} title={"23"} subtitle={"Chennai"} />
-          <Card bgColor={"pink"} title={"20 December"} subtitle={"14:02:30"} />
-          <Card bgColor={"yellow"} title={"Bulid Using"} subtitle={"React"}/>
+      <main className="dashboard">
+        <div className="dashboard-panel">
+          <Header username={data.state.user}></Header>
+          <div className="stats-grid">
+            <Card bgColor={"#e3f2e7"} title={"23°"} subtitle={"Chennai today"} />
+            <Card bgColor={"#eef1f8"} title={"20 Dec"} subtitle={"Tuesday, 14:02"} />
+            <Card bgColor={"#f5efe3"} title={"0"} subtitle={"Tasks completed"}/>
+          </div>
+          <Todo/>
         </div>
-        <Todo/>
-      </div>
-    </div>
+      </main>
 )
 }
 export default Landing
