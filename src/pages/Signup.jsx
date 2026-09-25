@@ -26,24 +26,21 @@ const Sign = (props) => {
         navigate("/")
     }
     return (
-        <h1>
-            <div className="bg-black p-10">
-
-
-                <div className="bg-white p-5 rounded-md">
-                    <h1 className="font-bold text-3xl">Hey Hi 👋</h1>
-                    <p>You can Signup here :)</p>
-                    <div className="flex flex-col w-52 gap-2 my-2">
-                        <input value={euser} onChange={handleEuser} type="text" placeholder="Username" className="border-2 bg-transparent focus:outline-hidden p-2 rounded-md"></input><br />
-                        <input value={epass} onChange={handleEpass} type="text" placeholder="Password" className="border-2 bg-transparent focus:outline-hidden p-2 rounded-md"></input><br />
-                        <input type="text" placeholder="comfrim passwaord" className="border-2 bg-transparent focus:outline-hidden p-2 rounded-md"></input><br />
-                        <button className="bg-amber-500 p-2 rounded-md w-20" onClick={importUsers}>Sign Up</button>
-                    </div>
-
-                    <p>Already an account? <Link to="/" className="underline">LogIn</Link></p>
+        <main className="auth-shell">
+            <section className="auth-card">
+                <div className="brand-mark">A</div>
+                <p className="eyebrow">ACTODO / GET STARTED</p>
+                <h1>Build a better rhythm.</h1>
+                <p className="auth-copy">Create your workspace and turn small steps into steady progress.</p>
+                <div className="auth-form">
+                    <label>Username<input value={euser} onChange={handleEuser} type="text" placeholder="Choose a username" /></label>
+                    <label>Password<input value={epass} onChange={handleEpass} type="password" placeholder="Create a password" /></label>
+                    <label>Confirm password<input type="password" placeholder="Repeat your password" /></label>
+                    <button className="primary-button" onClick={importUsers}>Create workspace</button>
                 </div>
-            </div>
-        </h1>
+                <p className="auth-footer">Already have an account? <Link to="/">Log in</Link></p>
+            </section>
+        </main>
     )
 }
 export default Sign
